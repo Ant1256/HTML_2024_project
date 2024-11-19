@@ -11,6 +11,10 @@
     font-family: 'Minecraft';
     src: url('Minecraftia-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'National-Bold';
+    src: url('TestNational2-Thin.otf') format('truetype');
+}
 h1 {
     font-family: 'Minecraft', sans-serif;
     font-size: 75px;
@@ -41,26 +45,73 @@ main{
 footer{
     bottom: 0;
 }
+
 .button-link {
-    display: inline-block; /* Rend le lien en mode bloc pour définir une largeur et une hauteur */
-    padding: 10px 100px; /* Ajoute de l'espace autour du texte */
-    background-color: #00a000; /* Couleur de fond (vert clair) */
-    color: #fff; /* Couleur du texte */
-    text-decoration: none; /* Supprime le soulignement des liens */
-    border: 3px solid #007700; /* Bordure plus foncée */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre légère */
-    font-size: 20px; /* Taille du texte */
-    font-family: "Minecraft", sans-serif; /* Police du texte */
-    text-align: center; /* Centre le texte */
+    font-size: 18px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: flex;
+    margin-left: 625px;
+    margin-top: 525px;
+    width: 250px;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: "Arial", sans-serif;
+    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-.button-link:hover {
-    background-color: #00b000; /* Change légèrement la couleur au survol */
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6); /* Accentue l'ombre */
+.button-link:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+    z-index: -1;
+    background-color: #008542 ;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+    0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+    4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.button-link:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.button-link:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.button-link:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
 .button-link:active {
-    background-color: #007700; /* Couleur plus foncée quand on clique */
-
+    transform: translateY(4px);
 }
+
+.button-link:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
