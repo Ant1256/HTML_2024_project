@@ -11,8 +11,59 @@
     <header>
         <a href="acceuil.html"><img src="./logo.png" alt="" class="logo"></a>
         <h1>COCHON</h1>
-        <input type="search" class="barrederecherche">
-        <button><img class="recherche" src="Search-Button.png"></button>
+        <div class="toutelabarrederecherche">
+            <input type="search" class="barrederecherche">
+            <button><img class="recherche" src="Search-Button.png"></button>
+        </div>
     </header>
+    <div class="aucentre">
+        <a href=""><img src="fleche.png" alt="" class="fleche"></a>
+        <img src="Cochon.webp" alt="" class="mobimage">
+        <a href=""><img src="fleche2.png" alt="" class="fleche"></a>
+    </div>
+    <a href="#bottom" class="button-link" id="boutonscroll"><div>Plus d'infos</div></a>
+    <footer>
+        Points de vie : 10
+        <br>
+        <br>
+        Taille :
+        <br>
+        Adulte :
+        <br>
+        Longueur : 0,9 bloc
+        <br>
+        Largeur : 0,9 bloc
+        <br>
+        Bébé :
+        <br>
+        Longueur : 0,45 bloc
+        <br>
+        Largeur : 0,45 bloc
+        <br>
+        <br>
+        Apparition :
+        <br>
+        Blocs opaques avec un espace de deux blocs au minimum au dessus.
+        <br>
+        <br>
+        Récompenses	:
+        <br>
+        Côtelette de porc crue (1 à 3) (si tué)
+        <br>
+        Côtelette de porc cuite (1 à 3) (si tué par du feu)
+        <br>
+        <br>
+        Expérience :
+        <br>
+        1 à 3 Experience Orb
+        <div id="bottom" style="height: 0px;"></div>
+    </footer>
+    <script>
+        const boutonscroll = document.getElementById('boutonscroll');
+        const targetSection = document.getElementById('bottom');
+        scrollButton.addEventListener('click', () => {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

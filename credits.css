@@ -7,6 +7,10 @@
     src: url('TestNational2-Thin.otf') format('truetype');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .logo {
     width: 165px;
     margin-top: 0;
@@ -16,9 +20,19 @@
 
 }
 
+.logo:hover {
+    transform:scale(1.1)
+}
+.logo:active {
+    transform: scale(0.95);
+}
+
 body {
     background-image: url("tous-les-mobs-crédits.png");
     background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
 }
 
 h1 {

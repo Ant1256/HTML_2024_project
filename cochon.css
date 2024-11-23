@@ -7,9 +7,17 @@
     src: url('TestNational2-Thin.otf') format('truetype');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-image: url("plains_biome_day.png");
     font-family: Arial, Helvetica, sans-serif;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
 }
 
 header{
@@ -29,7 +37,15 @@ header{
     margin-top: 15px;
 }
 
+.logo:hover {
+    transform:scale(1.1)
+}
+.logo:active {
+    transform: scale(0.95);
+}
+
 h1 {
+    font-family: "Minecraft";
     font-size: 75px;
     text-align: center;
     margin-top: 30px;
@@ -45,11 +61,17 @@ button {
     height: 20px;
 }
 
+.toutelabarrederecherche {
+    border: none;
+    border-color: white;
+}
+
 .barrederecherche {
     width: 100px;
     height: 20px;
     margin-left: 100px;
     border: none;
+    padding: 0px;
 }
 
 .recherche {
@@ -57,3 +79,110 @@ button {
     height: 20px;
 
 }
+
+.aucentre {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.mobimage {
+    height: 350px;
+    margin-left: 410px;
+    margin-right: 410px;
+    margin-top: 60px;
+}
+
+.fleche {
+    margin-top: 160px;
+    padding: 0px;
+    height: 150px;
+    /* box-shadow: #000000 0px 0px 20px;  */
+}
+
+.fleche:hover {
+    transform: scale(1.1);
+}
+
+.fleche:active {
+    transform: scale(0.95);
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-family: "Minecraft";
+    font-size: 20px;
+    margin-top: 200px;
+    margin-left: 50px;
+}
+
+.button-link {
+    font-size: 18px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: flex;
+    margin-left: 625px;
+    margin-top: 150px;
+    width: 250px;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: "Arial", sans-serif;
+    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.button-link:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+    z-index: -1;
+    background-color: #008542 ;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+    0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+    4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.button-link:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.button-link:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.button-link:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.button-link:active {
+    transform: translateY(4px);
+}
+
+.button-link:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
