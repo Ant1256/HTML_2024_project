@@ -61,23 +61,52 @@ button {
     height: 20px;
 }
 
+
 .toutelabarrederecherche {
-    border: none;
-    border-color: white;
+    padding: 8px;
+    margin-left: 200px;
+    margin-top: 50px;
+    border-radius: 50px;
+    height: 50px;
+    width: 300px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(
+        330.28deg,
+        #6aba4e 0%,  
+        #4d774e 50%, 
+        #3a3a3a 100% 
+    );
 }
-
 .barrederecherche {
-    width: 100px;
-    height: 20px;
-    margin-left: 100px;
-    border: none;
-    padding: 0px;
+    text-align: center;
+    padding-top: 15px;
+    outline: none;
+    border: double 0;
+    background: #2e2e2e; 
+    border-radius: 50px;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 45px;
+    font-size: 1.5rem;
+    color: #caab98; 
+    font-family: "Minecraft", Arial, sans-serif; 
 }
-
-.recherche {
-    width: 20px;
-    height: 20px;
-
+.barrederecherche::placeholder {
+    color: #6aba4e; 
+    opacity: 0.7;
+    margin-top: 50px;
+    margin-left: 30PX;
+}
+.toutelabarrederecherche:hover {
+    background: linear-gradient(
+        330.28deg,
+        #76c85d 0%, 
+        #4d774e 50%, 
+        #494949 100% 
+    );
+    transform: scale(1.05); 
 }
 
 .aucentre {
@@ -99,11 +128,9 @@ button {
     height: 150px;
     /* box-shadow: #000000 0px 0px 20px;  */
 }
-
 .fleche:hover {
     transform: scale(1.1);
 }
-
 .fleche:active {
     transform: scale(0.95);
 }
@@ -111,10 +138,50 @@ button {
 footer {
     text-align: center;
     color: white;
-    font-family: "Minecraft";
+    font-family: "Minecraft", Arial, sans-serif;
     font-size: 20px;
-    margin-top: 200px;
-    margin-left: 50px;
+    margin-top: 140px;
+    margin-left: 50px;    
+    padding: 20px 0;
+}
+
+/* Boîte contenant les informations */
+.Info_supp {
+    border: solid 3px #6aba4e; /* Vert herbeux, légèrement saturé */
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(60, 102, 40, 0.9), rgba(106, 170, 89, 0.7)); /* Effet dégradé vert pour l'herbe */
+    backdrop-filter: blur(4px); /* Flou pour l'effet "verre" */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); /* Ombre autour de la boîte */
+    color: #ffffff; /* Texte blanc */
+}
+
+/* Titres */
+.Info_supp h3 {
+    font-size: 24px;
+    color: #f1c40f; 
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Paragraphes et textes */
+.Info_supp p {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.Info_supp strong {
+    color: #ff5555; 
+}
+
+.Info_supp:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(135deg, rgba(60, 120, 50, 0.95), rgba(106, 190, 89, 0.8)); /* Accentuation du vert */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
 }
 
 .button-link {
@@ -124,7 +191,7 @@ footer {
     text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
     display: flex;
     margin-left: 625px;
-    margin-top: 150px;
+    margin-top: 50px;
     width: 250px;
     justify-content: center;
     position: relative;
