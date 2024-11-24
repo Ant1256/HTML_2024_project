@@ -11,17 +11,65 @@
     <header>
         <a href="acceuil.html"><img src="./logo.png" alt="" class="logo"></a>
         <h1>COCHON</h1>
-        <div class="recherche">
-        <div class="toutelabarrederecherche">
-            <input placeholder="Rechercher..." name="search" type="text" class="barrederecherche">
-        </div>
-    </div>
     </header>
     <div class="aucentre">
-        <a href=""><img src="fleche.png" alt="" class="fleche"></a>
-        <img src="Cochon.webp" alt="" class="mobimage">
-        <a href=""><img src="fleche2.png" alt="" class="fleche"></a>
-    </div>
+        <div class="carousel">
+            <img src="fleche.png" alt="Précédent" class="fleche_gauche fleche" id="prev" >
+            <div class="carousel-container">
+                <!-- Mob 1 : Cochon -->
+                <div class="mob-card pacifique">
+                    <img src="Cochon.webp" alt="Cochon" class="mobimage">
+                    <div class="mob-info">Pacifique: Cochon</div>
+                </div>
+                <!-- Mob 2 : Mouton -->
+                <div class="mob-card pacifique">
+                    <img src="Mouton_blanc.webp" alt="Mouton" class="mobimage">
+                    <div class="mob-info">Pacifique: Mouton</div>
+                </div>
+                <!-- Mob 3 : Poulet -->
+                <div class="mob-card pacifique">
+                    <img src="Poulet.webp" alt="Poulet" class="mobimage">
+                    <div class="mob-info">Pacifique: Poulet</div>
+                </div>
+                <!-- Mob 4 : Vache -->
+                <div class="mob-card pacifique">
+                    <img src="Vache.webp" alt="Vache" class="mobimage">
+                    <div class="mob-info">Pacifique: Vache</div>
+                </div>
+                <!-- Mob 5 : Zombie -->
+                <div class="mob-card hostile">
+                    <img src="Zombie.webp" alt="Zombie" class="mobimage">
+                    <div class="mob-info">Hostile: Zombie</div>
+                </div>
+                <!-- Mob 6 : Creeper -->
+                <div class="mob-card hostile">
+                    <img src="Creeper.webp" alt="Creeper" class="mobimage">
+                    <div class="mob-info">Hostile: Creeper</div>
+                </div>
+                <!-- Mob 7 : Squelette -->
+                <div class="mob-card hostile">
+                    <img src="Squelette.webp" alt="Squelette" class="mobimage">
+                    <div class="mob-info">Hostile: Squelette</div>
+                </div>
+                <!-- Mob 8 : Araignée -->
+                <div class="mob-card hostile">
+                    <img src="Araignee.webp" alt="Araignée" class="mobimage SPIDER">
+                    <div class="mob-info">Hostile: Araignée</div>
+                </div>
+                <!-- Mob 9 : Enderman -->
+                <div class="mob-card hostile">
+                    <img src="Enderman.webp" alt="Enderman" class="mobimage">
+                    <div class="mob-info">Hostile: Enderman</div>
+                </div>
+                <!-- Mob 10 : Loup -->
+                <div class="mob-card pacifique">
+                    <img src="Loup.webp" alt="Loup" class="mobimage">
+                    <div class="mob-info">Pacifique: Loup</div>
+                </div>
+            </div>
+            <img src="fleche2.png" alt="Suivant" class="fleche_droite fleche" id="next">
+        </div>
+    </div>        
     <a href="#bottom" class="button-link" id="boutonscroll"><div>Plus d'infos</div></a>
     <footer>
         <div id="bottom" style="height: 0px;"></div>
@@ -55,11 +103,38 @@
         </div>
     </footer>
     <script>
-        const boutonscroll = document.getElementById('boutonscroll');
-        const targetSection = document.getElementById('bottom');
-        scrollButton.addEventListener('click', () => {
+    const boutonscroll = document.getElementById('boutonscroll'); // Assure que cette ligne utilise "boutonscroll"
+    const targetSection = document.getElementById('bottom');
+    boutonscroll.addEventListener('click', () => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+        
+                // Initialisation
+        const mobCards = document.querySelectorAll('.mob-card');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentIndex = 0;
+
+        // Met à jour le mob actif
+        function updateCarousel() {
+            mobCards.forEach((card, index) => {
+                card.classList.toggle('active', index === currentIndex);
+            });
+        }
+        // Bouton suivant
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % mobCards.length;
+            updateCarousel();
         });
+        // Bouton précédent
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + mobCards.length) % mobCards.length;
+            updateCarousel();
+        });
+        // Initialisation au chargement
+        updateCarousel();
+
     </script>
 </body>
 </html>
