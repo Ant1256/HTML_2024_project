@@ -75,65 +75,58 @@
         <div id="bottom" style="height: 0px;"></div>
         <div class="Info_supp">
             <h3>Caractéristiques</h3>
-            <p>
-                <strong>Points de vie :</strong> 10
-            </p>
-            <p>
-                <strong>Taille :</strong><br>
+            <p><strong>Points de vie :</strong> <span id="hp">10</span></p>
+            <p><strong>Taille :</strong><br>
                 Adulte :<br>
-                Longueur : 0,9 bloc<br>
-                Largeur : 0,9 bloc<br>
+                Longueur : <span id="adult-length">0.9 bloc</span><br>
+                Largeur : <span id="adult-width">0.9 bloc</span><br>
                 Bébé :<br>
-                Longueur : 0,45 bloc<br>
-                Largeur : 0,45 bloc
+                Longueur : <span id="baby-length">0.45 bloc</span><br>
+                Largeur : <span id="baby-width">0.45 bloc</span>
             </p>
-            <p>
-                <strong>Apparition :</strong><br>
-                Blocs opaques avec un espace de deux blocs au minimum au-dessus.
-            </p>
-            <p>
-                <strong>Récompenses :</strong><br>
-                Côtelette de porc crue (1 à 3) (si tué)<br>
-                Côtelette de porc cuite (1 à 3) (si tué par du feu)
-            </p>
-            <p>
-                <strong>Expérience :</strong><br>
-                1 à 3 Experience Orb
-            </p>
+            <p><strong>Apparition :</strong><br><span id="appearance">Blocs opaques avec un espace de deux blocs au minimum au-dessus.</span></p>
+            <p><strong>Récompenses :</strong><br><span id="rewards">Côtelette de porc crue (1 à 3) ou cuite (1 à 3) si tué par du feu.</span></p>
+            <p><strong>Expérience :</strong><br><span id="experience">1 à 3 Experience Orb</span></p>
         </div>
     </footer>
+
     <script>
-    const boutonscroll = document.getElementById('boutonscroll'); // Assure que cette ligne utilise "boutonscroll"
-    const targetSection = document.getElementById('bottom');
-    boutonscroll.addEventListener('click', () => {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
-        
-                // Initialisation
-        const mobCards = document.querySelectorAll('.mob-card');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
+        // Initialisation
+    const mobCards = document.querySelectorAll('.mob-card');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
 
-        let currentIndex = 0;
-
-        // Met à jour le mob actif
-        function updateCarousel() {
-            mobCards.forEach((card, index) => {
-                card.classList.toggle('active', index === currentIndex);
-            });
+    // Met à jour le mob actif et change le fond
+    function updateCarousel() {
+        mobCards.forEach((card, index) => {
+            card.classList.toggle('active', index === currentIndex);
+        });
+        // Change le fond en fonction du mob actif
+        const activeCard = mobCards[currentIndex];
+        if (activeCard.classList.contains('hostile')) {
+            document.body.classList.remove('pacifique-bg');
+            document.body.classList.add('hostile-bg');
+        } else {
+            document.body.classList.remove('hostile-bg');
+            document.body.classList.add('pacifique-bg');
         }
-        // Bouton suivant
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % mobCards.length;
-            updateCarousel();
-        });
-        // Bouton précédent
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + mobCards.length) % mobCards.length;
-            updateCarousel();
-        });
-        // Initialisation au chargement
+    }
+    // Bouton suivant
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % mobCards.length;
         updateCarousel();
+    });
+
+    // Bouton précédent
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + mobCards.length) % mobCards.length;
+        updateCarousel();
+    });
+
+    // Initialisation au chargement
+    updateCarousel();
+
 
     </script>
 </body>

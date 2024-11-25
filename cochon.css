@@ -12,13 +12,20 @@ html {
 }
 
 body{
-    background-image: url("plains_biome_day.png");
     font-family: Arial, Helvetica, sans-serif;
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
     background-attachment: fixed;
 }
+body.pacifique-bg {
+    background-image: url('plains_biome_day.png'); 
+}
+
+body.hostile-bg {
+    background-image: url('plains_biome_night.png'); 
+}
+
 
 header{
     display:flex;
@@ -103,6 +110,7 @@ footer {
     backdrop-filter: blur(4px); 
     padding: 20px;
     margin: 0 auto;
+    margin-bottom: 75px;
     max-width: 600px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); 
     color: #ffffff; 
@@ -140,7 +148,7 @@ footer {
     color: #fff;
     text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
     display: flex;
-    margin-left: 625px;
+    margin-left: 600px;
     margin-top: 50px;
     width: 250px;
     justify-content: center;
@@ -209,18 +217,22 @@ footer {
     justify-content: center;
     position: relative;
     width: 100%;
+
 }
 
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     overflow: hidden;
-    width: 100%;
+    width: 550px;
+    align-items: center;
+
 }
 
 .mob-card {
     flex-shrink: 0;
     width: 250px;
+    margin-top: 50px;
     position: absolute;
     height: 400px;
     display: flex;
@@ -230,11 +242,11 @@ footer {
     text-align: center;
     padding: 20px;
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.7);
+
     color: white;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.5s ease;
+
 }
 .mob-card .SPIDER{
     width: 350px;
@@ -251,13 +263,7 @@ footer {
 }
 
 
-.pacifique {
-    border: 3px solid #6aba4e; 
-}
 
-.hostile {
-    border: 3px solid #ff5555; 
-}
 
 
 .mob-info {
