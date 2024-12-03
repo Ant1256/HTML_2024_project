@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraftia-Regular.ttf') format('truetype');
+}
+
+
+.logo{
+    width: 165px;
+    margin-top: 5px;
+    height: 165px;
+    margin-left: 20px;
+    position:absolute;
+    top: 8px;
+}
+
+.logo:hover {
+    transform:scale(1.1)
+}
+.logo:active {
+    transform: scale(0.95);
+}
+
+header{
+    background-color: #1E5128;
+    width: 95%;
+    height: 150px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+#Titre{
+    text-align: center;
+    color: white;
+    font-family: "Minecraft", sans-serif;
+    margin-bottom: 0px;
+}
+
+
+
+.trie{
+    margin-left: 119px;
+    margin-top: 0px;
+
+}
+
+
+.option {
+    display: inline-block; 
+    margin-left: 150px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 8px;
+    padding: 10px 20px; 
+    background: transparent; 
+    border: 2px solid white; 
+    box-shadow: none; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.option:hover {
+    background: rgb(61, 255, 90); 
+    color: black; 
+    box-shadow: 0 8px 15px rgba(0, 236, 67, 0.5); 
+    transform: translateY(-3px); 
+}
+
+.option:active {
+    transform: translateY(0px); 
+    box-shadow: 0 4px 10px rgba(0, 236, 67, 0.3);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.cache{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* La glissière */
+.slider {
+    position: absolute;
+    height: 30px;
+    width: 60px;
+    top: 70px;
+    left: 1350px;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px; /* Coins arrondis */
+}
+
+/* Le cercle à l'intérieur */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    bottom: 0px;
+    background-image: url('lune_png.png');
+    transition: 0.4s;
+    border-radius: 0%;
+}
+
+/* Quand l'interrupteur est activé */
+input:checked + .slider {
+    background-color: #4CAF50;
+    
+}
+
+input:checked + .slider::before {
+    transform: translateX(30px);
+}
+
+
+
+body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #121212;
+    background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+    );
+    background-size: 40px 40px;
+
+    /* Animation */
+    animation: move 4s linear infinite;
+}
+
+@keyframes move {
+    0% {
+    background-position: 0 0;
+    }
+    100% {
+    background-position: 40px 40px;
+    }
+}
+
